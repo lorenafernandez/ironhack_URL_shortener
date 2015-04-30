@@ -1,0 +1,10 @@
+<h1> URL shortener </h1>
+
+<%= form_for @link do |f| %>
+
+	<%= f.label  :long_link %>
+	<%= f.text_field :long_link %>
+
+	<p> <%= f.submit  'Create a new link' %> </p>
+
+<% end %>

@@ -1,0 +1,14 @@
+<h1> Links</h1>
+<% @links.each do |l| %>
+	<ul>
+		<li> <strong> Original link: </strong><%= l.long_link %> 
+			<strong> / Shorted link: </strong> 
+			<%= link_to("#{request.domain}:#{request.port}/#{l.short_link}", link_path(l))%> /
+			<strong> Created on: </strong>
+			<%= l.created_at.strftime("%d-%m-%Y") %>
+			<strong> Visited </strong>
+			<%= l.number_of_visits %>
+			<strong> times </strong>
+		</li>
+	</ul>
+<% end %>
